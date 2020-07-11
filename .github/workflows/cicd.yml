@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    env:
+      AWS_ACCESS_KEY_ID: 'AKIAJ5ZEHEQUSFHZW4MQ' 
+      AWS_SECRET_ACCESS_KEY: '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'
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@master
+    - name: Deploy code to Lambda
+      uses: ovsen/action-deploy-aws-lambda@1.2
+      with:
+        lambda_function_name: 'test_function'
+        lambda_region: 'eu-west-2'
