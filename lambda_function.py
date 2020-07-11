@@ -12,7 +12,16 @@ cursor = connection.cursor()
 
 def lambda_handler(event, context):
     # TODO implement
+    cursor.execute("SELECT * FROM veer_db.river_levels")
+    result = cursor.fetchall()
+    datetimelist = []
+    for row in result:
+        datetimelist.append((row['datetime'],row['height']))
+        #print(row['datetime'])
+    maxind = datetimelist.index(max(datetimelist))
+    to_print = datetimelist[maxind]
+    print(to_print)
     return {
         'statusCode': 200,
-        'body': json.dumps('Hello from Lambda!')
+        'body': json.dumps("'datetime':" + to_print[0] + "'height': " + str(to_print[1]))
     }
