@@ -22,6 +22,11 @@ def lambda_handler(event, context):
     to_print = datetimelist[maxind]
     print(to_print)
     return {
+        'headers': {
+            "Access-Control-Allow-Headers" : "Content-Type",
+            "Access-Control-Allow-Origin": "146.199.90.164",
+            "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+        },
         'statusCode': 200,
         'body': json.dumps({'datetime': str(to_print[0]), 'height': str(to_print[1])})
     }

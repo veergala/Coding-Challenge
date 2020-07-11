@@ -6,7 +6,7 @@ fetch(url).then((resp) => resp.json())
     /// INSERT CODE HERE
  
     // current level is displayed with time formatted
-    document.getElementById("currentLevel").innerHTML = "<h1 ><em> Current Level: </em>" + RIVER LEVEL VAR + "m <em>at</em> " + TIME VAR+ "</h1>"
+    document.getElementById("currentLevel").innerHTML = "<h1 ><em> Current Level: </em>" + data["height"] + "m <em>at</em> " + data["datetime"]+ "</h1>"
     // if levels are rising or falling
     if (RISING){
         document.getElementById("changeInLevel").innerHTML = "<img style='display:inline' src='img/down.png' height='50px' width='50px'><p style='display:inline; padding:1px;'> Falling </p>"
