@@ -16,4 +16,4 @@ jobs:
       uses: ovsen/action-deploy-aws-lambda@1.2
       with:
         lambda_function_name: 'river-levels'
-        lambda_region: 'eu-north-1'
+        lambda_region: 'eu-west-1'
