@@ -23,5 +23,5 @@ def lambda_handler(event, context):
     print(to_print)
     return {
         'statusCode': 200,
-        'body': json.dumps("'datetime':" + str(to_print[0]) + "'height': " + str(to_print[1]))
+        'body': json.dumps({'datetime': str(to_print[0]), 'height': + str(to_print[1])})
     }
