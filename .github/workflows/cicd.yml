@@ -5,8 +5,8 @@ on:
 jobs:
   build:
     env:
-      AWS_ACCESS_KEY_ID: 'AKIAJ5ZEHEQUSFHZW4MQ' 
-      AWS_SECRET_ACCESS_KEY: '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'
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     
     runs-on: ubuntu-latest
     
@@ -15,5 +15,5 @@ jobs:
     - name: Deploy code to Lambda
       uses: ovsen/action-deploy-aws-lambda@1.2
       with:
-        lambda_function_name: 'test_function'
-        lambda_region: 'eu-west-2'
+        lambda_function_name: 'river-levels'
+        lambda_region: 'eu-north-1'
