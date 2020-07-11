@@ -1,5 +1,5 @@
 // api url
-const url = "https://environment.data.gov.uk/flood-monitoring/id/stations/0240120/readings?_sorted&_limit=100";
+const url = "https://lhnlwgplxc.execute-api.eu-west-1.amazonaws.com/default/river-levels";
 fetch(url).then((resp) => resp.json())
 .then(function(data) {
 
